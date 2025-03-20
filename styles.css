@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Quicksand:wght@400;600&display=swap');
+        
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f0f4f8;
+    font-family: 'Quicksand', sans-serif;
+    color: #2d3748;
+}
+
+.banner{
+    width: 100%;
+    min-height: 380px;
+    background-image: linear-gradient(135deg, #6b46c1 0%, #805ad5 50%, #9f7aea 100%);
+    color: white;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.6s ease;
+    transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    z-index: 1;
+}
+
+.banner-content{
+    max-width:1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    align-items: center;
+    position: relative;
+    z-index: 5;
+}
+
+@media (max-width: 768px) {
+    .banner-content {
+        flex-direction: column;
+    }
+}
+
+.banner-text h1{
+    font-family: 'Permanent Marker', cursive;
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    display: inline-block;
+}
+
+.banner-text p{
+    font-size: 1.2rem;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.image-container{
+    position: relative;
+    height: 280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hobby-img {
+    max-width: 100%;
+    height: auto;
+    max-height: 280px;
+    border-radius: 12px;
+    transform: rotate(2deg);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+    transition: all 0.5s ease;
+    object-fit: cover;
+}
+
+.hobby-img:hover {
+    transform: rotate(0deg) scale(1.10);
+}
+
+.controls{
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.controls::before {
+    content: "✨";
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    opacity: 0.6;
+}
+
+.controls h2{
+    margin-bottom: 25px;
+    font-family: 'Permanent Marker', cursive;
+    color: #4a5568;
+    font-size: 1.8rem;
+    position: relative;
+    display: inline-block;
+}
+
+.form-group {
+    margin-bottom: 25px;
+    position: relative;
+}
+
+label{
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #4a5568;
+}
+
+select, input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: 'Quicksand', sans-serif;
+    transition: all 0.3s ease;
+    background-color: #f8fafc;
+}
+
+/* select:focus, input:focus {
+    outline: none;
+    border-color: #805ad5;
+    box-shadow: 0 0 0 3px rgba(128, 90, 213, 0.2);
+} */
+
+.theme-options{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.theme-option{
+    height: 80px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.theme-option:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0,0,0,0.08);
+}
+
+.theme-option.selected {
+    box-shadow: 0 0 0 3px #000, 0 10px 15px rgba(0,0,0,0.1);
+}
+
+.theme-option span {
+    /* position: absolute; */
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 5px;
+    background: rgba(0,0,0,0.6);
+    color: white;
+    text-align: center;
+    font-size: 0.85rem;
+    border-radius: 5px;
+}
+
+#apply-button{
+    background: #6b46c1;
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    font-size: 1.1rem;
+    font-weight: 550;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: block;
+    width: auto;
+    margin: 30px auto 0;
+    min-width: 180px;
+    box-shadow: 0 4px 6px rgb(107, 70, 193);
+}
+
+#apply-button:hover {
+    background: #805ad5;
+    transform: translateY(-2px);
+    box-shadow: 0 7px 14px rgba(107, 70, 193, 0.4);
+}
+
+#apply-button:active {
+    transform: translateY(1px);
+}
