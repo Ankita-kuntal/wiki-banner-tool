@@ -26,7 +26,7 @@ This project features a simple webpage with two main elements:
 ## Installation & Setup
 1. Clone this repository:
    ```sh
-   git clone <repository_url>
+   git clone https://github.com/Ankita-kuntal/wiki-banner-tool.git
    ```
 2. Navigate to the project folder:
    ```sh
