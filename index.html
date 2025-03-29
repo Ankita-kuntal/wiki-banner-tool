@@ -3,68 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OUTREACHY MICRO TASK</title>
+    <meta name="description" content="Interactive hobby showcase with customization options - Outreachy Micro Task">
+    <title>Hobby Showcase - Outreachy Micro Task</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-    <div id="main-banner" class="banner">
-        <div class="banner-content">
-            <div class="banner-text">
-                <h1 id="banner-title">
-                    THINGS I ENJOY!
-                </h1>
-                <p>
-                    When life feels boring, I turn to my three favorite creative activities. Coding helps me create digital things, dancing lets me express myself through music, and sketching captures special moments. Each hobby gives me a way to express feelings that words can't.
-                </p>
-            </div>
-
-            <div class="image-container">
-                <img id="hobby-img" class="hobby-img" src="./download (6).jpeg" alt="hobby-img" height="280px" width="400px">
-            </div>
-        </div>
-    </div>
-
-    <div class="controls">
-        <h2>Remix My Vibe</h2>
-
-        <div class="form-group">
-            <label for = "title-input" >Craft a title : </label>
-            <input type="text" id="title-input" placeholder="Something witty and wonderful...">
-        </div>
-
-        <div class="form-group">
-            <label for="hobby-select">My Hobbies :</label>
-            <select id="hobby-select">
-                <option value="all">The Creative Trinity</option>
-                <option value="coding">Coding </option>
-                <option value="dancing">Dancing </option>
-                <option value="sketching">Sketching </option>
-            </select>
-        </div>
-
-        <div class="form-group">
-            <label for="mood-pallete">Choose Your Mood Palette : </label>
-            <div class="theme-options">
-                <div class="theme-option selected" style="background: linear-gradient(135deg, #6b46c1 0%, #805ad5 100%);" data-color="purple">
-                    <span>Mystical</span>
-                </div>
-                <div class="theme-option" style="background: linear-gradient(135deg, #2f855a 0%, #38a169 100%);" data-color="green">
-                    <span>Serene</span>
-                </div>
-                <div class="theme-option" style="background: linear-gradient(135deg, #c05621 0%, #dd6b20 100%);" data-color="orange">
-                    <span>Energetic</span>
-                </div>
-                <div class="theme-option" style="background: linear-gradient(135deg, #2b6cb0 0%, #4299e1 100%);" data-color="blue">
-                    <span>Dreamy</span>
-                </div>
-            </div>
-        </div>
-
-        <button id="apply-button">Click!</button>
-    </div>
-
+    <header>
+        <h1 class="sr-only">Interactive Hobby Showcase</h1>
+    </header>
     
+    <main>
+        <!-- Skip to content link for screen reader users -->
+        <a href="#controls" class="skip-link">Skip to customization controls</a>
+
+        <!-- Banner Section -->
+        <section id="main-banner" class="banner" tabindex="0" aria-labelledby="banner-title" aria-describedby="banner-description">
+            <div class="banner-content">
+                <div class="banner-text">
+                    <h2 id="banner-title">
+                        THINGS I ENJOY!
+                    </h2>
+                    <p id="banner-description">
+                        When life feels boring, I turn to my three favorite creative activities. Coding helps me create digital things, dancing lets me express myself through music, and sketching captures special moments. Each hobby gives me a way to express feelings that words can't.
+                    </p>
+                </div>
+
+                <div class="image-container">
+                    <img id="hobby-img" class="hobby-img" src="./download (6).jpeg" alt="All creative hobbies - coding, dancing, and sketching" height="280" width="400">
+                </div>
+            </div>
+        </section>
+
+        <!-- Controls Section -->
+        <section id="controls" class="controls" aria-label="Banner customization controls">
+            <h2>Remix My Vibe</h2>
+            
+            <form id="banner-form" action="#" method="get" onsubmit="return false;">
+                <div class="form-group">
+                    <label for="title-input">Craft a title:</label>
+                    <input type="text" id="title-input" placeholder="Something witty and wonderful..." aria-label="Enter custom banner title" maxlength="50">
+                    <div class="input-help" id="title-help">Enter a title (max 50 characters)</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="hobby-select">My Hobbies:</label>
+                    <select id="hobby-select" aria-label="Select hobby to display">
+                        <option value="all">The Creative Trinity</option>
+                        <option value="coding">Coding</option>
+                        <option value="dancing">Dancing</option>
+                        <option value="sketching">Sketching</option>
+                    </select>
+                </div>
+
+                <fieldset class="form-group">
+                    <legend id="mood-palette-legend">Choose Your Mood Palette:</legend>
+                    <div class="theme-options" role="radiogroup" aria-labelledby="mood-palette-legend">
+                        <div class="theme-option selected" 
+                             style="background: linear-gradient(135deg, #6b46c1 0%, #805ad5 100%);" 
+                             data-color="purple" 
+                             role="radio" 
+                             aria-checked="true" 
+                             tabindex="0"
+                             aria-label="Mystical purple theme">
+                            <span>Mystical</span>
+                        </div>
+                        <div class="theme-option" 
+                             style="background: linear-gradient(135deg, #2f855a 0%, #38a169 100%);" 
+                             data-color="green" 
+                             role="radio" 
+                             aria-checked="false" 
+                             tabindex="0"
+                             aria-label="Serene green theme">
+                            <span>Serene</span>
+                        </div>
+                        <div class="theme-option" 
+                             style="background: linear-gradient(135deg, #c05621 0%, #dd6b20 100%);" 
+                             data-color="orange" 
+                             role="radio" 
+                             aria-checked="false" 
+                             tabindex="0"
+                             aria-label="Energetic orange theme">
+                            <span>Energetic</span>
+                        </div>
+                        <div class="theme-option" 
+                             style="background: linear-gradient(135deg, #2b6cb0 0%, #4299e1 100%);" 
+                             data-color="blue" 
+                             role="radio" 
+                             aria-checked="false" 
+                             tabindex="0"
+                             aria-label="Dreamy blue theme">
+                            <span>Dreamy</span>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <div class="button-group">
+                    <button id="apply-button" type="submit" aria-label="Apply changes to the banner">
+                        <span class="icon">✨</span>
+                        Apply Changes
+                    </button>
+                    <button id="reset-button" type="reset" aria-label="Reset banner to original state">
+                        <span class="icon">↩️</span>
+                        Reset
+                    </button>
+                </div>
+            </form>
+            
+            <div id="preview-help" class="help-text">
+                <h3>About This Customizer</h3>
+                <p>This interactive banner lets you personalize content by changing the title, selecting a hobby focus, and choosing a color theme.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Status Messages for Screen Readers -->
+    <div id="notification" class="notification" aria-live="assertive" role="status"></div>
 
     <script src="script.js"></script>
 </body>
