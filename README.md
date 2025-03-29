@@ -53,12 +53,7 @@ This project features a simple webpage with two main elements:
    ```sh
    git push origin main
    ```
-
-## Future Enhancements
-- Add more customization options like font selection.
-- Improve UI design with animations.
-- Store user preferences using local storage.
-
+   
 ## License
 This project is open-source and available under the MIT License.
 
